@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/rest/user")
 public class UserResource {
 
     private UserRepository userRepository;
