@@ -19,21 +19,21 @@ public class UserResource {
     }
 
     @GetMapping("/add/{id}/{name}")
-    public User add(@PathVariable("id") final String id,
-                    @PathVariable("name") final String name) {
+    public User add(@PathVariable("id") String id,
+                    @PathVariable("name") String name) {
         userRepository.save(new User(id, name, 20000L));
         return userRepository.findById(id);
     }
 
     @GetMapping("/update/{id}/{name}")
-    public User update(@PathVariable("id") final String id,
-                       @PathVariable("name") final String name) {
+    public User update(@PathVariable("id") String id,
+                       @PathVariable("name") String name) {
         userRepository.update(new User(id, name, 1000L));
         return userRepository.findById(id);
     }
 
     @GetMapping("/delete/{id}")
-    public Map<String, User> delete(@PathVariable("id") final String id) {
+    public Map<String, User> delete(@PathVariable("id") String id) {
         userRepository.delete(id);
         return all();
     }
